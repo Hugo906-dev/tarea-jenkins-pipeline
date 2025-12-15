@@ -1,0 +1,26 @@
+pipeline {
+    agent any // Esto le dice a Jenkins: "Ejecútame en cualquier computadora disponible" (en tu caso, tu propia PC).
+
+    stages { // Aquí empiezan las "Etapas" del proceso. Es como un índice de capítulos.
+
+        stage('Build') { // Etapa 1: Construcción
+            steps {
+                // Aquí irían los comandos reales como 'mvn clean install'.
+                // Como es una simulación, usamos 'echo' que solo imprime texto en pantalla.
+                echo 'Building... (Aquí estaríamos compilando el código java)'
+            }
+        }
+
+        stage('Test') { // Etapa 2: Pruebas
+            steps {
+                echo 'Testing... (Aquí estaríamos pasando pruebas unitarias)'
+            }
+        }
+
+        stage('Deploy') { // Etapa 3: Despliegue
+            steps {
+                echo 'Deploying... (Aquí estaríamos subiendo el programa al servidor)'
+            }
+        }
+    }
+}
